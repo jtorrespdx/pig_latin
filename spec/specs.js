@@ -19,4 +19,12 @@ describe('pigLatin', function() {
     it("if a word has qu in the first syllabil, it moves the first letter to the end and adds ay", function() {
         expect(pigLatin("squeal")).to.equal("ealsquay");
     });
+
+    it("if a word has qu in the first two letters, it moves the first letter to the end and adds ay", function() {
+        expect(pigLatin("queen")).to.equal("eenquay");
+    });
+
+    it("if a word has qu in the first two letters, it moves the first letter to the end and adds ay", function() {
+        expect(pigLatin("queen squeal yellow")).to.eql("eenquay ealsquay ellowyay");
+    });
 });
