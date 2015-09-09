@@ -1,19 +1,10 @@
-var factorial = function(num){
-    if(num <= 0){
-        return 1;
-    }else
-    {
-        return num* factorial(num-1);
+
+var pigLatin = function(phrase){
+
+        if (phrase.match(/[^aeiouy]/) && phrase[1].match(/[aeiouy]/)) {
+            phrase = phrase.substring(1, phrase.length) + phrase[0];
+        }else if(phrase.match(/[^aeiouy](\w{2})/)) {
+            phrase = phrase.substring(2, phrase.length) + phrase[0] + phrase[1];
+        }
+        return phrase += "ay";
     }
-};
-
-$(document).ready(function(){
-    $("form#factorial").submit(function(event){
-        var num = parseInt($("input#num").val());
-        var result = factorial(num);
-
-        $(".answer").text(result);
-        $("#result").show();
-        event.preventDefault();
-    });
-});
