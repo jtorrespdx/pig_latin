@@ -11,4 +11,12 @@ describe('pigLatin', function() {
     it("if a word begins with two consanants, it moves the first two letters to the end and adds ay", function() {
         expect(pigLatin("plural")).to.equal("uralplay");
     });
+
+    it("if a word begins with y, it moves the first letter to the end and adds ay", function() {
+        expect(pigLatin("yellow")).to.equal("ellowyay");
+    });
+
+    it("if a word has qu in the first syllabil, it moves the first letter to the end and adds ay", function() {
+        expect(pigLatin("squeal")).to.equal("ealsquay");
+    });
 });
